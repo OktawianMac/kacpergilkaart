@@ -163,7 +163,7 @@ main h1 {
 
 .main-image {
     width: 100%;
-    height: auto;
+    height: 80%;
     border: 5px solid rgb(185, 118, 92);
     cursor: pointer;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
@@ -222,6 +222,7 @@ a[data-title]:hover:before {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
 }
 
 .modal img {
