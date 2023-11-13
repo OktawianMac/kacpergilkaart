@@ -1,0 +1,19 @@
+backend:
+  name: test-repo
+
+media_folder: "static/designs"
+public_folder: "/designs"
+
+collections:
+  - name: "designs"
+    label: "Designs"
+    folder: "content/designs"
+    create: true
+    fields:
+      - { name: "name", label: "Design Name", widget: "string" }
+      - { name: "link", label: "Behance Link", widget: "string" }
+      - { name: "mainImage", label: "Main Image", widget: "image" }
+      - { name: "images", label: "Additional Images", widget: "list", fields: [
+          { name: "image", label: "Image", widget: "image" }
+        ]
+      }

@@ -1,0 +1,13 @@
+                   <div class="design-box">
+                    <h2 class="design-name"><a href="link-do-projektu" target="blank"
+                            data-title="Press for more info">Nazwa</a></h2>
+                    <img class="main-image" src="" alt="Design 4" />
+                    <div id="modal3" class="modal">
+                        <span class="close" id="close3">&times;</span>
+                        <div class="modal-content">
+                            <img src="" alt="Desing 4 - Photo 1" />
+                            <img src="" alt="Desing 4 - Photo 2" />
+                            <img src="" alt="Desing 4 - Photo 3" />
+                        </div>
+                    </div>
+                </div>

@@ -1,0 +1,328 @@
+@font-face {
+    font-family: 'gold-west';
+    src: url('./gold-west/GoldWestRegular.woff') format('woff'),
+         url('./gold-west/GoldWestRegular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roadRace';
+    src: url('./roadRace/RoadRace-Regular.woff') format('woff'),
+         url('./roadRace/RoadRace-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: rgb(185, 118, 92);
+    height: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    font-family: 'roadRace', sans-serif;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(24, 24, 24);
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.media img {
+    display: inline-block;
+    width: 30px;
+    padding-left: 25px;
+    margin: 0 10px;
+}
+
+.logo {
+    height: 200px;
+    width: 200px;
+    margin-left: 80px;
+    padding-left: 20px;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.navigation li {
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(185, 118, 92);
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+nav a:focus {
+    color: white;
+    outline: none;
+}
+
+nav a:active {
+    text-decoration: underline;
+}
+
+.merch-dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.merch-dropdown span::after {
+    content: "\25BC";
+    margin-left: 5px;
+}
+
+.merch-options {
+    display: none;
+    position: absolute;
+    background-color: rgb(24, 24, 24);
+    border: 1px solid rgb(185, 118, 92);
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    width: 100px;
+}
+
+.merch-dropdown:hover {
+    color: white;
+}
+
+.merch-dropdown:hover .merch-options {
+    display: block;
+}
+
+.background {
+    background-color: white;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('./background.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50% 10%;
+}
+
+main {
+    text-align: center;
+    width: 100vw;
+}
+
+main h1 {
+    font-size: 64px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.designs-panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; 
+    margin: 0 -15px;
+}
+.designs-panel a {
+    text-decoration: none;
+    color: rgb(185, 118, 92);
+}
+
+.design-box {
+    width: calc(26% - 30px);
+    margin: 15px; 
+    padding: 10px;
+    text-align: center;
+}
+
+.design-name {
+    margin-bottom: 10px;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    border: 5px solid rgb(185, 118, 92);
+    cursor: pointer;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    padding: 0;
+    transition-duration: 0.5s;
+}
+
+.main-image:hover {
+    transform: scale(1.05);
+    border: 10px solid rgb(185, 118,92);
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.5);
+    background-color: rgb(185, 118, 92);
+}
+
+a[data-title] {
+    position: relative;
+}
+
+a[data-title]:before {
+    content: attr(data-title);
+    position: absolute;
+    top: -30px; 
+    left: -20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: rgb(185, 118, 92);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    z-index: 1; 
+    display: none;
+}
+
+a[data-title]:hover:before {
+    display: block;
+}
+
+
+/* Dodatkowy CSS dla modala */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.modal img {
+    max-width: 30%;
+    max-height: auto;
+    margin: 10px;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .media {
+        padding-top: 20px;
+    }
+
+    .logo {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .background {
+        position: relative;
+        background-attachment: scroll;
+    }
+
+    main {
+        width: 90%;
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 100px;
+        margin: auto;
+        overflow: auto;
+    }
+
+    .designs-panel {
+        flex-direction: column;
+    }
+
+    .design-box {
+        width: 100%;
+    }
+
+    .main-image {
+        width: 80%;
+    }
+
+    a[data-title]:before {
+        top: -20px;
+        left: 0;
+    }
+}
+
+/* Styl dla ekranów o szerokości mniejszej niż 500px */
+@media (max-width: 500px) {
+    .background {
+        background-attachment: scroll;
+    }
+
+    main {
+        width: 80%;
+    }
+
+    main h1 {
+        font-size: 36px;
+    }
+
+    .designs-panel {
+        flex-direction: column;
+    }
+
+    .design-box {
+        width: 90%;
+    }
+
+    .main-image {
+        width: 75%;
+    }
+
+    a[data-title]:before {
+        top: -20px;
+        left: 0;
+    }
+}

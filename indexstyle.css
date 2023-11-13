@@ -1,0 +1,228 @@
+@font-face {
+    font-family: 'gold-west';
+    src: url('./gold-west/GoldWestRegular.woff') format('woff'),
+         url('./gold-west/GoldWestRegular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roadRace';
+    src: url('./roadRace/RoadRace-Regular.woff') format('woff'),
+         url('./roadRace/RoadRace-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    color: rgb(185, 118, 92);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'roadRace', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(24, 24, 24);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.media img {
+    display: inline-block;
+    width: 30px;
+    padding-left: 25px;
+    margin: 0 10px;
+}
+
+.logo {
+    height: 200px;
+    width: 200px;
+    margin-left: 80px;
+    padding-left: 20px;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.navigation li {
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(185, 118, 92);
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+nav a:focus {
+    color: white;
+    outline: none;
+}
+
+nav a:active {
+    text-decoration: underline;
+}
+
+.merch-dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer; 
+}
+
+.merch-dropdown span::after {
+    content: "\25BC"; 
+    margin-left: 5px; 
+}
+
+.merch-options {
+    display: none;
+    position: absolute;
+    background-color: rgb(24, 24, 24);
+    border: 1px solid rgb(185, 118, 92);
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    width: 100px;
+}
+
+.merch-dropdown:hover {
+    color: white;
+}
+
+.merch-dropdown:hover .merch-options {
+    display: block;
+}
+
+.background {
+    background-color: white;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('./background.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50% 10%;
+    position: absolute;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 50%;
+    text-align: center;
+    padding-top: 50px;
+    margin: auto;
+    overflow: auto;
+}
+
+main h1 {
+    font-size: 64px;
+    font-family: 'gold-west', sans-serif;
+}
+
+main h2 {
+    padding-top: 35px;
+    font-size: 24px;
+}
+
+main h3 {
+    font-size: 24px;
+}
+
+footer {
+    text-align: center;
+    font-size: 15px;
+    color: rgb(185, 118, 92);
+    text-decoration: none;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgb(24, 24, 24);
+}
+
+footer h4 {
+    font-size: 15px;
+}
+
+footer a {
+    text-decoration: none;
+    color: rgb(185, 118, 92);
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* Styl dla ekranów o szerokości mniejszej niż 768px */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .media {
+        padding-top: 20px;
+    }
+
+    .logo {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .background {
+        position: relative;
+        background-attachment: scroll;
+    }
+
+    main {
+        width: 90%;
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 100px;
+        margin: auto;
+        overflow: auto;
+    }
+}
+
+/* Styl dla ekranów o szerokości mniejszej niż 500px */
+@media (max-width: 500px) {
+    .background {
+        background-attachment: scroll;
+    }
+
+    main {
+        width: 80%;
+    }
+
+    main h1 {
+        font-size: 36px;
+    }
+}
